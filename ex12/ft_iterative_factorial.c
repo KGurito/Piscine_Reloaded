@@ -6,7 +6,7 @@
 /*   By: gustavo <gustavo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 18:48:06 by gustavo           #+#    #+#             */
-/*   Updated: 2025/07/14 20:00:25 by gustavo          ###   ########.fr       */
+/*   Updated: 2025/07/14 20:09:38 by gustavo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_iterative_factorial(int nb)
 	return (0);
 }
 
-int	main(void)
-{
-	printf("%d\n", ft_iterative_factorial(0));
-}
+// int	main(void)
+// {
+// 	printf("%d\n", ft_iterative_factorial(0));
+// }
