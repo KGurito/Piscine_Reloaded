@@ -1,45 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gusoares <gusoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 23:47:06 by gustavo           #+#    #+#             */
-/*   Updated: 2025/07/15 16:51:32 by gusoares         ###   ########.fr       */
+/*   Created: 2025/07/15 17:30:53 by gusoares          #+#    #+#             */
+/*   Updated: 2025/07/15 17:49:00 by gusoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
+#include <string.h>
 
-int	ft_sqrt(int nb);
+int	ft_strlen(char *str);
 
-int	ft_sqrt(int nb)
+int	ft_strlen(char *str)
 {
-	int	square;
 	int	i;
 
-	i = 1;
-	square = 1;
-	if (nb <= 0 || nb > 2147395601)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		return (0);
+		i++;
 	}
-	while (i < 46341)
-	{
-		i *= square;
-		if (nb == i)
-		{
-			return (square);
-		}
-		square++;
-		i = square;
-	}
-	return (0);
+	return (i);
 }
 
 // int	main(void)
 // {
-// 	printf("%d\n", ft_sqrt(-2));
+// 	printf("%d\n", ft_strlen(""));
 // }

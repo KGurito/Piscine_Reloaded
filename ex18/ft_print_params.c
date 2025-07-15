@@ -1,45 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gusoares <gusoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 23:47:06 by gustavo           #+#    #+#             */
-/*   Updated: 2025/07/15 16:51:32 by gusoares         ###   ########.fr       */
+/*   Created: 2025/07/15 18:24:32 by gusoares          #+#    #+#             */
+/*   Updated: 2025/07/15 18:45:54 by gusoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
-int	ft_sqrt(int nb);
+void	ft_putchar(char caracter);
 
-int	ft_sqrt(int nb)
+// void	ft_putchar(char caracter)
+// {
+// 	write(1, &caracter, 1);
+// }
+
+void	ft_putstr(char *str)
 {
-	int	square;
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+}
+
+int	main(int argc, char *argv[])
+{
 	int	i;
 
 	i = 1;
-	square = 1;
-	if (nb <= 0 || nb > 2147395601)
+	while (argc > 1)
 	{
-		return (0);
+		ft_putstr(argv[i]);
+		ft_putstr("\n");
+		i++;
+		argc--;
 	}
-	while (i < 46341)
-	{
-		i *= square;
-		if (nb == i)
-		{
-			return (square);
-		}
-		square++;
-		i = square;
-	}
-	return (0);
 }
-
-// int	main(void)
-// {
-// 	printf("%d\n", ft_sqrt(-2));
-// }

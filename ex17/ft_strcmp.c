@@ -1,45 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gusoares <gusoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 23:47:06 by gustavo           #+#    #+#             */
-/*   Updated: 2025/07/15 16:51:32 by gusoares         ###   ########.fr       */
+/*   Created: 2025/07/15 17:56:15 by gusoares          #+#    #+#             */
+/*   Updated: 2025/07/15 18:22:24 by gusoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
+#include <string.h>
 
-int	ft_sqrt(int nb);
+int	ft_strcmp(char *s1, char *s2);
 
-int	ft_sqrt(int nb)
+int	ft_choice(int result)
 {
-	int	square;
-	int	i;
-
-	i = 1;
-	square = 1;
-	if (nb <= 0 || nb > 2147395601)
+	if (result > 0)
 	{
-		return (0);
+		return (1);
 	}
-	while (i < 46341)
+	else
 	{
-		i *= square;
-		if (nb == i)
+		return (-1);
+	}
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+	int	result;
+
+	i = 0;
+	while (s1[i] != '\0')
+	{
+		if (s1[i] != s2[i])
 		{
-			return (square);
+			result = s1[i] - s2[i];
+			return(ft_choice(result));
 		}
-		square++;
-		i = square;
+		i++;
+	}
+	if (s2[i] != '\0')
+	{
+		result = s1[i] - s2[i];
+		return(ft_choice(result));
 	}
 	return (0);
 }
 
 // int	main(void)
 // {
-// 	printf("%d\n", ft_sqrt(-2));
+// 	printf("%d\n", ft_strcmp("gus","gus4"));
 // }
