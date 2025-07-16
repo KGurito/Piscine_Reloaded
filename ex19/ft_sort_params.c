@@ -6,7 +6,7 @@
 /*   By: gusoares <gusoares@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 18:48:37 by gusoares          #+#    #+#             */
-/*   Updated: 2025/07/15 19:39:15 by gusoares         ###   ########.fr       */
+/*   Updated: 2025/07/15 21:17:20 by gusoares         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,32 +52,26 @@ int	ft_strcmp(char *s1, char *s2)
 	return (0);
 }
 
-char	ft_sort_values(int argc, char *argv[])
+void	ft_sort_values(int argc, char *argv[])
 {
-	char	change;
+	char	*change;
 	int	i;
-	int	a;
-	int	b;
 
-	i = 0;
-	a = argc;
-	b = argc;
-	while (a > 1)
+	while (argc > 1)
 	{
-		while (b > 1)
+		i = 1;
+		while (argv[i + 1])
 		{
-			if (ft_strcmp(argv[i], argv[i + 1]) < 0)
+			if (ft_strcmp(argv[i], argv[i+1]) > 0)
 			{
-				change = *argv[i + 1];
-				argv[i + 1] = argv[i];
-				*argv[i] = change;
+				change = argv[i];
+				argv[i] = argv[i+1];
+				argv[i+1] = change;
 			}
-			b--;
+			i++;
 		}
-		b = argc;
-		a--;
+		argc--;
 	}
-	return (**argv);
 }
 
 int	main(int argc, char *argv[])
@@ -85,7 +79,7 @@ int	main(int argc, char *argv[])
 	int	i;
 
 	i = 1;
-	**argv = ft_sort_values(argc, argv);
+	ft_sort_values(argc, argv);
 	while (argc > 1)
 	{
 		ft_putstr(argv[i]);
